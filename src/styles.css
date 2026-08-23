@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #111111;
+  background: #f5efe3;
+  font-synthesis: none;
+  --cream: #f5efe3;
+  --ink: #111111;
+  --accent: #f4b400;
+  --pink: #f3a5a8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--cream); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.page { min-height: 100vh; overflow: hidden; }
+
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  border-bottom: 2px solid var(--ink);
+}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
+.logo span { font-size: 1rem; vertical-align: top; }
+.navLinks { display: flex; gap: 2rem; font-size: .86rem; font-weight: 700; text-transform: uppercase; }
+.navLinks a { transition: transform .2s ease; }
+.navLinks a:hover { transform: translateY(-2px); }
+.cart {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: .65rem 1rem;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cart b { margin-left: .35rem; }
+
+.hero {
+  min-height: calc(100vh - 78px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5vw;
+  gap: 4vw;
+  align-items: center;
+}
+.heroCopy { position: relative; z-index: 2; max-width: 700px; }
+.eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .12em; margin: 0 0 1.25rem; }
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  line-height: .84;
+  letter-spacing: -.075em;
+  margin: 0;
+}
+h1 em { font-style: normal; -webkit-text-stroke: 2px var(--ink); color: transparent; }
+.intro { max-width: 400px; margin: 2rem 0; font-size: 1.1rem; line-height: 1.5; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: .9rem 1.25rem;
+  font-weight: 700;
+  font-size: .9rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.button:hover { transform: translate(-2px, -3px); box-shadow: 4px 4px 0 var(--ink); }
+.buttonPrimary { background: var(--ink); color: var(--cream); }
+.buttonSecondary { background: transparent; }
+
+.heroArt { min-height: 540px; position: relative; display: grid; place-items: center; }
+.blob { position: absolute; border: 3px solid var(--ink); }
+.blobOne { width: 390px; height: 390px; background: var(--accent); border-radius: 48% 52% 58% 42%; transform: rotate(-12deg); }
+.blobTwo { width: 330px; height: 330px; background: var(--pink); border-radius: 57% 43% 39% 61%; transform: translate(50px, 70px) rotate(18deg); }
+.cup { width: 240px; height: 170px; border: 5px solid var(--ink); background: var(--cream); border-radius: 25px 25px 70px 70px; position: relative; z-index: 2; transform: rotate(-5deg); display: grid; place-items: center; box-shadow: 10px 10px 0 var(--ink); }
+.cup::before { content: ''; position: absolute; width: 190px; height: 50px; background: var(--ink); border-radius: 50%; top: -25px; }
+.cupHandle { position: absolute; width: 65px; height: 75px; border: 5px solid var(--ink); border-left: 0; border-radius: 0 50% 50% 0; right: -67px; z-index: -1; }
+.cup span { position: relative; z-index: 3; font-family: 'Space Grotesk'; font-weight: 700; font-size: 1.5rem; margin-top: 25px; }
+.coffee { position: absolute; width: 180px; height: 35px; background: var(--accent); border-radius: 50%; top: -17px; z-index: 2; }
+.sun { position: absolute; top: 3%; right: 9%; font-size: 4rem; z-index: 3; }
+.sticker { position: absolute; left: 5%; bottom: 7%; z-index: 4; background: var(--cream); border: 3px solid var(--ink); border-radius: 50%; width: 115px; height: 115px; display: grid; place-content: center; text-align: center; font-family: 'Space Grotesk'; font-weight: 700; line-height: .9; transform: rotate(-12deg); box-shadow: 5px 5px 0 var(--ink); }
+.sticker small { margin-top: 4px; }
+.bean { position: absolute; font-size: 7rem; font-weight: 700; z-index: 4; }
+.beanOne { top: 18%; left: 8%; transform: rotate(35deg); }
+.beanTwo { bottom: 14%; right: 7%; transform: rotate(-35deg); }
+
+.ticker { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: .75rem 0; display: flex; justify-content: space-around; gap: 1rem; font-size: .72rem; font-weight: 700; letter-spacing: .1em; white-space: nowrap; }
+
+@media (max-width: 850px) {
+  .nav { padding: 0 5vw; }
+  .navLinks { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+  .heroArt { min-height: 430px; margin-top: -1rem; }
+  .blobOne { width: 310px; height: 310px; }
+  .blobTwo { width: 270px; height: 270px; }
+  .cup { transform: scale(.85) rotate(-5deg); }
+  .ticker { justify-content: flex-start; overflow: hidden; }
+  .ticker span:nth-child(even) { display: none; }
+}
